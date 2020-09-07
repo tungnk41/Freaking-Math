@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startGame">
+    <fragment
+        android:id="@+id/startGame"
+        android:name="com.example.freakingmath.StartGame"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGame_to_playingGame"
+            app:destination="@id/playingGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/playingGame"
+        android:name="com.example.freakingmath.PlayingGame"
+        android:label="fragment_playing_game"
+        tools:layout="@layout/fragment_playing_game" >
+        <action
+            android:id="@+id/action_playingGame_to_endGame"
+            app:destination="@id/endGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGame"
+        android:name="com.example.freakingmath.EndGame"
+        android:label="EndGame"
+        tools:layout="@layout/fragment_end_game">
+        <action
+            android:id="@+id/action_endGame_to_startGame"
+            app:destination="@id/startGame" />
+    </fragment>
+</navigation>
